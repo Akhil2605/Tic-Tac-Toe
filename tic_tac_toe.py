@@ -1,8 +1,3 @@
-"""
-TechVidvan Tic Tac Toe Project in Python using Pygame
-Reference: https://techvidvan.com/tutorials/python-game-project-tic-tac-toe/
-"""
-
 import os
 import sys
 import time
