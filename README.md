@@ -8,7 +8,6 @@ A classic Tic Tac Toe game developed using Python and Pygame.
 - Mouse-based controls
 - Automatic turn switching
 - Win and draw detection
-- Game restart functionality
 
 ## 🛠️ Technologies Used
 - Python
