@@ -62,14 +62,12 @@ def game_opening():
 
 def draw_status():
     global draw
-
     if winner is None:
         message = XO.upper() + "'s Turn"
     else:
         message = winner.upper() + " won!"
     if draw:
         message = 'Game Draw!'
-
     font = pg.font.Font(None, 30)
     text = font.render(message, True, (255, 255, 255))
 
@@ -79,10 +77,8 @@ def draw_status():
     screen.blit(text, text_rect)
     pg.display.update()
 
-
 def check_win():
     global TTT, winner, draw
-
     # Check for winning rows
     for row in range(0, 3):
         if (TTT[row][0] == TTT[row][1] == TTT[row][2]) and (TTT[row][0] is not None):
@@ -113,7 +109,6 @@ def check_win():
     if (TTT[0][0] == TTT[1][1] == TTT[2][2]) and (TTT[0][0] is not None):
         winner = TTT[0][0]
         pg.draw.line(screen, (250, 70, 70), (50, 50), (350, 350), 4)
-
     if (TTT[0][2] == TTT[1][1] == TTT[2][0]) and (TTT[0][2] is not None):
         winner = TTT[0][2]
         pg.draw.line(screen, (250, 70, 70), (350, 50), (50, 350), 4)
@@ -121,9 +116,7 @@ def check_win():
     # Check for draw
     if all([all(row) for row in TTT]) and winner is None:
         draw = True
-
     draw_status()
-
 
 def drawXO(row, col):
     global TTT, XO
