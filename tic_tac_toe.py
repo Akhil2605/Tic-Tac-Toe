@@ -126,14 +126,12 @@ def drawXO(row, col):
         posx = width / 3 + 30
     if row == 3:
         posx = width / 3 * 2 + 30
-
     if col == 1:
         posy = 30
     if col == 2:
         posy = height / 3 + 30
     if col == 3:
         posy = height / 3 * 2 + 30
-
     TTT[row - 1][col - 1] = XO
     if XO == 'x':
         screen.blit(x_img, (posy, posx))
@@ -143,11 +141,9 @@ def drawXO(row, col):
         XO = 'x'
     pg.display.update()
 
-
 def userClick():
     # Get coordinates of mouse click
     x, y = pg.mouse.get_pos()
-
     # Get column of mouse click (1-3)
     if x < width / 3:
         col = 1
@@ -167,12 +163,10 @@ def userClick():
         row = 3
     else:
         row = None
-
     if row and col and TTT[row - 1][col - 1] is None:
         global XO
         drawXO(row, col)
         check_win()
-
 
 def reset_game():
     global TTT, winner, XO, draw
@@ -183,10 +177,8 @@ def reset_game():
     winner = None
     TTT = [[None] * 3, [None] * 3, [None] * 3]
 
-
 def main():
     game_opening()
-
     # Main game loop
     while True:
         for event in pg.event.get():
@@ -197,10 +189,8 @@ def main():
                 userClick()
                 if winner or draw:
                     reset_game()
-
         pg.display.update()
         CLOCK.tick(fps)
-
 
 if __name__ == '__main__':
     main()
